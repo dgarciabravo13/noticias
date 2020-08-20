@@ -1,4 +1,10 @@
 import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+
+const Info = styled.p`
+  font-size:1rem;
+`;
 
 const Noticia = ({ noticia }) => {
   const { urlToImage, url, title, description, source } = noticia;
@@ -15,8 +21,8 @@ const Noticia = ({ noticia }) => {
         {imagen}
 
         <div className="card-content">
-          <h3>{title}</h3>
-          <p>{description}</p>
+          <h4>{title}</h4>
+          <Info>{description}</Info>
         </div>
 
         <div className="card-action">
@@ -33,5 +39,9 @@ const Noticia = ({ noticia }) => {
     </div>
   );
 };
+
+Noticia.propTypes = {
+  noticia: PropTypes.object.isRequired
+}
 
 export default Noticia;
